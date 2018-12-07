@@ -7,34 +7,34 @@
 //
 
 import UIKit
-//import FacebookLogin
-import FBSDKCoreKit
-import FBSDKLoginKit
+import FacebookLogin
+//import FBSDKCoreKit
+//import FBSDKLoginKit
 
 
-class ViewController: UIViewController,FBSDKLoginButtonDelegate {
+class ViewController: UIViewController {
     
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+////
+//    }
 //
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-//        
-    }
+//    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+////
+//    }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        let loginButton = LoginButton(readPermissions: [ .publicProfile ])
-//        loginButton.center = view.center
-//
-//        view.addSubview(loginButton)
-        let fbLoginBtn = FBSDKLoginButton()
-        fbLoginBtn.readPermissions = ["public_profile", "email"]
-        fbLoginBtn.center = self.view.center
-        fbLoginBtn.delegate = self
-        self.view.addSubview(fbLoginBtn)
+//         Do any additional setup after loading the view, typically from a nib.
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+
+//        let fbLoginBtn = FBSDKLoginButton()
+//        fbLoginBtn.readPermissions = ["public_profile", "email"]
+//        fbLoginBtn.center = self.view.center
+//        fbLoginBtn.delegate = self
+//        self.view.addSubview(fbLoginBtn)
     }
 
 
